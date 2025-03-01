@@ -1,6 +1,7 @@
 package undestiny.logindemo.controller;
 
 import jakarta.servlet.http.HttpSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,7 +10,10 @@ import undestiny.logindemo.service.UserServiceImpl;
 
 @RestController
 public class LoginController {
-    private UserService userService = new UserServiceImpl();
+    //private UserService userService = new UserServiceImpl();
+
+    @Autowired
+    private UserService userService;
 
     @GetMapping("/login/{username}/{password}")
     public String login(@PathVariable(value = "username",required = true)String username,

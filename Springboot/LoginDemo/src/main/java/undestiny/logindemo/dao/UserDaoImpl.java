@@ -1,12 +1,13 @@
 package undestiny.logindemo.dao;
 
+import org.springframework.stereotype.Service;
 import undestiny.logindemo.entity.User;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class UserDaoImpl implements UserDao{
-
     @Override
     public List<User> getUserList() {
         User user1 = new User(1,"Jack","123");
